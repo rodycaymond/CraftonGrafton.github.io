@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crafton Grafton</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: Helvetica;
+        }
+        header {
+            text-align: center;
+            background-color: #06304b;
+            box-shadow: 5px 5px 5px;
+            margin-bottom: 5px;
+        }
+        header h1 {
+            font-size: 3rem;
+            color: whitesmoke;
+        }
+        body {
+            background-image: url(./images/background.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+
+        }
+        img {
+            width: 80%;
+            height: auto;
+            border: 2px solid #ffce3f;
+        }
+        .section1 {
+            text-align: center;
+            padding-top: 48px;
+            padding-bottom: 48px;
+            margin-left: 15%;
+            margin-right: 15%;
+            padding-left: 5%;
+            padding-right: 5%;
+            background-color: rgba(0, 148, 182, 0.75);
+        }
+        .section2 {
+            text-align: center;
+            padding-bottom: 48px;
+            margin-left: 15%;
+            margin-right: 15%;
+            padding-left: 5%;
+            padding-right: 5%;
+            background-color: rgba(0, 148, 182, 0.75);
+        }
+        .section2 h2 {
+            font-size: 2em;
+            margin: 0% 15%;
+            line-height: 2em;
+            text-align: left;
+        }
+        #works {
+            margin-top: 24px;
+            text-align: center;
+        }
+        .section2 h3 {
+            margin: 0% 15%;
+            text-align: left;
+        }
+        #canvasWrapper {
+            margin: 0% 15%;
+            padding: 0% 10%;
+            background-color: rgba(0, 148, 182, 0.75);
+        }
+        canvas {
+            background-color: black;
+            width: 100%;
+            height: auto;
+            border: 4px dotted white;
+        }
+        .inlineBlock {
+            width: 10%;
+            height: auto;
+            margin-left: 25%;
+        }
+        .special {
+            width: 10%;
+            height: auto;
+        }
+        .special2 {
+            width: 10%;
+            height: auto;
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-around;
+            margin: 0% 15% 0% 15%;
+            padding: 2% 10% 5% 10%;
+            background-color: rgba(0, 148, 182, 0.75);
+        }
+        button {
+            font-size: 1.25em;
+            font-weight: bold;
+            border-radius: 20px;
+            width: 15%;
+            margin: 0% 5%;
+            padding: 5px 10px;
+            background-color: #06304b;
+            color: white;
+        }
+        #game-console {
+            text-align: center;
+            padding: 24px 0px;
+            background-color: whitesmoke;
+            border: 4px dotted black;
+            width: 100%;
+        }
+        footer{
+            background-color: #06304b;
+            padding: 24px 0px;
+            box-shadow: -5px -5px 5px;
+        }
+        footer h1 {
+            text-align: center;
+            color: whitesmoke;
+        }
+        #input {
+            font-size: 18px;
+            width: 100%;
+            margin: 10px 0px;
+            border: 4px dotted rgb(26, 26, 26);
+            text-align: center;
+        }
+        #player-health {
+            text-align: left;
+            position: relative;
+            top: 60px;
+            left: 10px;
+            color: white;
+        }
+        #player-level {
+            text-align: left;
+            position: relative;
+            top: 60px;
+            left: 10px;
+            color: white;
+        }
+        #enemy-health {
+            text-align: right;
+            float: right;
+            position: relative;
+            top: 25px;
+            right: 10px;
+            color: white;
+        }
+        #player-experience {
+            text-align: left;
+            display: inline-block;
+            position: relative;
+            top: 60px;
+            left: 10px;
+            color: white;
+        }
+    </style>
+</head>
+<header>
+    <h1>Welcome to Crafton Grafton</h1>
+</header>
+<body>
+    <div class="section1">
+        <img src="./images/cover_art.jpg"/>
+        <p>The image above is depicting the Dragonfly enemy encountered in-game.</p>
+    </div>
+    <div class="section2">
+        <h2>The Crafton Grafton Attack Simulator is a text-based game where the player must defeat 
+            enemies of varying degrees in order to gain experience and level up, ultimately becoming 
+            strong enough to defeat Crafton Grafton! The player can visit the in-game item store to stock up on useful 
+            potions to help along the journey. Don't forget to rest between battles, or else risk dying mid fight!
+        </h2>
+        <h2 id="works">How The Game Works</h2>
+        <h3>Create your character and fight monsters to level up and get stronger and eventually learn new attacks! You earn money after each victory which can be used in the Item Store 
+            to purchase helpful potions along your journey.  Don't forget to rest every now and again so you're at full strength for your next battle!<br><br>
+            Once you think you're strong enough, click the Final Boss Fight button to try and take down Crafton Grafton! But be warned! Crafton Grafton is no easy foe. Make sure you're stocked 
+            up on potions before entering battle!
+        </h3>
+        <br>
+        <h4 style="text-align: center;">***Graphics Currently in Construction***</h4>
+    </div>
+    <div class="section3">
+        <div id="canvasWrapper">
+            <p id="player-health">Player Health:</p>
+            <p id="player-level">Player Level:</p>
+            <p id="enemy-health">Enemy Health:</p>
+            <p id="player-experience">Exp To Level Up:</p>
+            <canvas></canvas>
+            <h3 id="game-console">Welcome to Crafton Grafton's game! To get started, type in your character name and press submit.</h3>
+            <input id="input">
+            <button class="inlineBlock" onclick="submit()">Submit</button>
+            <button class="special" onclick="attack()">Attack!</button>
+            <button class="special2" onclick="rest()">Rest</button>
+        </div>
+    </div>
+    <div class="buttons">
+        <button id="button1" onclick="itemStore()">Item Store</button>
+        <button id="button2" onclick="train()">Train</button>
+        <button id="button3" onclick="inventory()">Inventory</button>
+        <button id="button4" onclick="finalBossFight()">Final Boss Fight</button>
+    </div>
+</body>
+<footer>
+    <h1>Thanks for playing!</h1>
+</footer>
+<script src="./main.js"></script>
+</html>
