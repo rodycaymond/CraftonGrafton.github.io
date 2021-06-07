@@ -1,5 +1,5 @@
 # Crafton_Grafton
-The alpha version of the Crafton Grafton game (without graphics)
+The alpha version of the Crafton Grafton game (without graphics) check out the game at rodycaymond.github.io/CraftonGrafton.github.io/
 I am a novice in the world of web dev (which may or may not be obvious) and this was my first attempt at creating a game in browser.
 The real purpose behind the game was to discover more things about web dev and learn more of the JS and HTML language and functionalities.
 It may not the be the right answer, but I basically used this as practice and to see how well I am able to use my knowledge of the languages to create something unique,
